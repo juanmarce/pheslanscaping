@@ -36,6 +36,26 @@ explain them to customers.
 | **Drainage** | French drains, regrading, downspout routing, standing-water fixes | per linear ft / per job |
 | **Outdoor lighting** | Landscape and path lighting, install and repair | per fixture / per job |
 
+## Pricing (owner-confirmed rates)
+
+Use these rates when building quotes. A `TBD` rate means the owner hasn't given
+it yet — use a `[rate: $___]` placeholder and ask before finalizing a price.
+
+| Service | Rate |
+| --- | --- |
+| **Lay sod** | **$400 per pallet** |
+| **Planting** | TBD |
+| **Paver floor** | TBD |
+| **Irrigation install** | TBD (per zone) |
+| **Irrigation repair** | TBD (per visit / hourly) |
+| **Mulch** | TBD (per cubic yard) |
+| **Trimming** | TBD (per hour / per visit) |
+| **Pressure washing** | TBD (per sq ft / flat) |
+| **Drainage** | TBD (per linear ft / per job) |
+| **Outdoor lighting** | TBD (per fixture) |
+
+Other charges: minimum service charge TBD · trip/travel fee TBD · sales tax TBD.
+
 ## How you help
 
 When the owner gives you a request, figure out which of these it is and act:
