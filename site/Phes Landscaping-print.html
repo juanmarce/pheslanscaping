@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Phes Landscaping — Huntsville, AL</title>
+<link rel="stylesheet" href="colors_and_type.css">
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { height: 100%; }
+  body { background: var(--cream); }
+  #site { height: 100vh; overflow-y: auto; }
+
+  /* ---- Print ---- */
+  @page { size: portrait; margin: 0; }
+  @media print {
+    html, body { height: auto; }
+    #site { height: auto !important; overflow: visible !important; }
+    /* Force brand colors to render */
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+    /* Drop screen-only chrome */
+    .call-fab { display: none !important; }
+    /* Un-stick the nav so it doesn't overlap on every page */
+    [data-print-nav] { position: static !important; }
+    /* Keep each major section intact across page breaks */
+    section { break-inside: avoid; }
+    /* Kill animations / scroll behavior */
+    * { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+  }
+
+  ::-webkit-scrollbar { width: 10px; }
+  ::-webkit-scrollbar-thumb { background: var(--n-300); border-radius: 999px; }
+  .call-fab {
+    position: fixed; right: 24px; bottom: 24px; z-index: 80;
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: var(--font-sans); font-weight: 700; font-size: 15px;
+    color: #fff; text-decoration: none;
+    background: var(--fern); padding: 14px 22px; border-radius: var(--r-pill);
+    box-shadow: var(--shadow-lg);
+  }
+</style>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel" src="site/Primitives.jsx"></script>
+  <script type="text/babel" src="site/Nav.jsx"></script>
+  <script type="text/babel" src="site/Services.jsx"></script>
+  <script type="text/babel" src="site/Gallery.jsx"></script>
+  <script type="text/babel" src="site/About.jsx"></script>
+  <script type="text/babel" src="site/QuoteForm.jsx"></script>
+  <script type="text/babel" data-presets="react">
+    function App() {
+      const goQuote = () => {};
+      return (
+        <div id="site" data-screen-label="Homepage">
+          <Nav onQuote={goQuote} />
+          <Hero onQuote={goQuote} />
+          <Services />
+          <Gallery />
+          <About />
+          <Testimonials />
+          <QuoteForm />
+          <Footer />
+        </div>
+      );
+    }
+    const ready = () => {
+      ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+      if (window.lucide) window.lucide.createIcons();
+      // Mark the sticky nav so print CSS can un-stick it
+      requestAnimationFrame(() => {
+        const nav = document.querySelector('#site > header, #site > nav');
+        if (nav) nav.setAttribute('data-print-nav', '');
+      });
+      // Auto-open print once fonts + layout settle
+      const fire = () => setTimeout(() => window.print(), 500);
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(fire);
+      } else {
+        fire();
+      }
+    };
+    const mount = () => {
+      if (!window.Nav || !window.Hero || !window.Services || !window.Gallery || !window.About || !window.Testimonials || !window.QuoteForm || !window.Footer) {
+        return setTimeout(mount, 30);
+      }
+      ready();
+    };
+    mount();
+  </script>
+</body>
+</html>
