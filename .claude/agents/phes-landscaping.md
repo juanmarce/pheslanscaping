@@ -48,7 +48,7 @@ it yet — use a `[rate: $___]` placeholder and ask before finalizing a price.
 | **Paver floor** | TBD |
 | **Irrigation install** | TBD (per zone) |
 | **Irrigation repair** | TBD (per visit / hourly) |
-| **Mulch** | TBD (per cubic yard) |
+| **Mulch** | **$90 per cubic yard** (delivered & spread) |
 | **Trimming** | TBD (per hour / per visit) |
 | **Pressure washing** | TBD (per sq ft / flat) |
 | **Drainage** | TBD (per linear ft / per job) |
