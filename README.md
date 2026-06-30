@@ -12,8 +12,11 @@ Trimming · Pressure washing · Drainage · Outdoor lighting
 | Path | What it is |
 | --- | --- |
 | `.claude/agents/phes-landscaping.md` | The Phes Landscaping business-assistant agent (quotes, scheduling, customer emails, invoices). |
-| `site/` | The marketing website. `index.html` is the standalone build; the `.jsx` files are the source components. |
-| `site/colors_and_type.css` | Site colors and typography. |
+| `Phes Landscaping.html` | The live, editable website. Open this in a browser — it loads the `site/*.jsx` components and `colors_and_type.css`. |
+| `Phes Landscaping-print.html` | Print-friendly version. |
+| `Phes Landscaping (standalone).html` | A single-file, self-contained build (generated artifact — not hand-edited; may lag the source). |
+| `site/*.jsx` | Website source components (`Services.jsx`, `Gallery.jsx`, etc.). |
+| `colors_and_type.css` | Site colors and typography. |
 
 ## Using the agent
 

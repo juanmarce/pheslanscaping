@@ -1,12 +1,15 @@
 /* Services grid */
 
 const SERVICES = [
+  { icon: 'sprout', title: 'Sod Installation', tone: 2, copy: 'Fresh, healthy sod graded and laid for a lawn that takes root fast and looks finished day one.' },
+  { icon: 'flower-2', title: 'Planting', tone: 0, copy: 'Trees, shrubs, and flower beds chosen and planted to thrive in your yard for years to come.' },
   { icon: 'layout-grid', title: 'Paver Patios & Walkways', tone: 1, copy: 'Custom brick and stone surfaces built to drain right and last for decades.' },
-  { icon: 'droplets', title: 'Irrigation Systems', tone: 0, copy: 'Efficient sprinkler design and install that keeps every zone green — and your water bill sane.' },
-  { icon: 'sprout', title: 'Sod & Grass Installation', tone: 2, copy: 'Fresh, healthy sod graded and laid for a lawn that takes root fast and looks finished day one.' },
-  { icon: 'layers', title: 'Mulch & Bed Work', tone: 3, copy: 'Clean-edged beds, fresh mulch, and the right plants for a yard that stays sharp all season.' },
-  { icon: 'ruler', title: 'Landscape Design', tone: 0, copy: 'A clear plan for your whole property — grading, plantings, and hardscape that work together.' },
-  { icon: 'calendar-check', title: 'Lawn Maintenance', tone: 2, copy: 'Dependable mowing, trimming, and seasonal care from a crew that shows up on schedule.' },
+  { icon: 'droplets', title: 'Irrigation — Install & Repair', tone: 0, copy: 'Efficient sprinkler design, installs, and fast repairs that keep every zone green.' },
+  { icon: 'layers', title: 'Mulch & Bed Work', tone: 3, copy: 'Clean-edged beds and fresh mulch that lock in moisture and keep your yard sharp all season.' },
+  { icon: 'scissors', title: 'Trimming & Pruning', tone: 2, copy: 'Shaped hedges, pruned shrubs, and tidy cleanup from a crew that shows up on schedule.' },
+  { icon: 'spray-can', title: 'Pressure Washing', tone: 1, copy: 'Driveways, patios, and walkways blasted clean — years of grime gone in an afternoon.' },
+  { icon: 'waves', title: 'Drainage Solutions', tone: 0, copy: 'French drains, regrading, and downspout routing that send standing water away for good.' },
+  { icon: 'lightbulb', title: 'Outdoor Lighting', tone: 3, copy: 'Path and landscape lighting that makes your property safer — and stunning after dark.' },
 ];
 
 function ServiceCard({ s }) {
