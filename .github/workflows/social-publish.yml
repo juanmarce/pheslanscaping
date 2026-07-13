@@ -1,0 +1,49 @@
+name: Publish social media posts
+
+on:
+  schedule:
+    # Tuesdays and Fridays at 9:00 AM Central (14:00 UTC during CDT)
+    - cron: '0 14 * * 2,5'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run (print posts without publishing)'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: social-publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Publish due posts
+        env:
+          META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          DRY_RUN: ${{ inputs.dry_run && '1' || '' }}
+        run: node social-agent/publish.mjs
+
+      - name: Commit published state
+        run: |
+          if git diff --quiet; then
+            echo "No posts were published; nothing to commit."
+            exit 0
+          fi
+          git config user.name "social-agent[bot]"
+          git config user.email "actions@github.com"
+          git add social-agent/content/queue
+          git commit -m "chore(social): mark published posts"
+          git push
