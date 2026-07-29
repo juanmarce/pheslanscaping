@@ -1,0 +1,250 @@
+/* ============================================================
+   PHES LANDSCAPING — Colors & Type Foundation
+   Huntsville, AL · Residential landscaping
+   Personality: professional + trustworthy, natural + organic
+   ============================================================ */
+
+/* ---- Fonts ----------------------------------------------- */
+/* Display: Spectral — a warm, organic transitional serif. Trustworthy + refined.
+   Body/UI: Hanken Grotesk — clean humanist grotesque, friendly + legible.
+   Both loaded from Google Fonts; local @font-face fallbacks live in fonts/ if downloaded. */
+@import url('https://fonts.googleapis.com/css2?family=Spectral:wght@300;400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap');
+
+:root {
+  /* ========================================================
+     BRAND COLOR — the green-to-earth spectrum
+     ======================================================== */
+  --forest:   #16301F; /* deepest — hero & footer fields            */
+  --pine:     #1E3D2A; /* dark brand green — section grounds        */
+  --fern:     #2E6B43; /* PRIMARY — buttons, links, key actions     */
+  --leaf:     #3E8C57; /* brighter green — hovers, highlights        */
+  --sage:     #8DA65A; /* olive accent — organic secondary           */
+  --sage-2:   #B6C68C; /* light sage — washes, tints                 */
+  --sand:     #D8C8A8; /* warm neutral — dividers, muted fills       */
+  --wheat:    #E8DCC2; /* pale warm — alt section backgrounds        */
+  --cream:    #F6F2E9; /* default page background                    */
+  --paper:    #FBF9F3; /* card / raised surface                      */
+  --bark:     #3A2E22; /* warm brown — earthy ink alternative        */
+  --harvest:  #C9882F; /* amber accent — used SPARINGLY for emphasis */
+
+  /* ========================================================
+     WARM NEUTRALS (green-tinted grays)
+     ======================================================== */
+  --n-900: #16201A;
+  --n-800: #283027;
+  --n-700: #3D463F;
+  --n-600: #5A645B;
+  --n-500: #7C857C;
+  --n-400: #A3ABA2;
+  --n-300: #C9CEC5;
+  --n-200: #E2E4DA;
+  --n-100: #EFF0E8;
+  --n-50:  #F7F7F1;
+  --white: #FFFFFF;
+
+  /* ========================================================
+     SEMANTIC COLOR
+     ======================================================== */
+  --success:    #2E6B43;
+  --success-bg: #E6EFE4;
+  --warning:    #C9882F;
+  --warning-bg: #F7ECD6;
+  --error:      #B23A2E;
+  --error-bg:   #F6E2DE;
+  --info:       #2C6E7A;
+  --info-bg:    #DEEDEF;
+
+  /* ========================================================
+     SEMANTIC ROLES — reference these in product code
+     ======================================================== */
+  --bg:          var(--cream);
+  --bg-alt:      var(--wheat);
+  --surface:     var(--paper);
+  --surface-2:   var(--white);
+  --ground-dark: var(--pine);   /* dark sections                 */
+
+  --fg:          var(--n-900);  /* primary text                  */
+  --fg-2:        var(--n-700);  /* secondary text                */
+  --fg-3:        var(--n-500);  /* muted / captions              */
+  --fg-on-dark:  #F2EFE6;       /* text on green grounds         */
+  --fg-on-dark-2:#B9C4B4;       /* secondary on dark             */
+
+  --primary:       var(--fern);
+  --primary-hover: var(--leaf);
+  --primary-press: var(--pine);
+  --accent:        var(--sage);
+
+  --border:        var(--n-200);
+  --border-strong: var(--n-300);
+  --divider:       var(--sand);
+  --ring:          color-mix(in oklab, var(--fern) 45%, transparent);
+
+  /* ========================================================
+     RADII
+     ======================================================== */
+  --r-xs: 4px;
+  --r-sm: 7px;
+  --r-md: 11px;
+  --r-lg: 16px;
+  --r-xl: 24px;
+  --r-2xl: 34px;
+  --r-pill: 999px;
+
+  /* ========================================================
+     SHADOWS — soft, warm-tinted, low spread (natural light)
+     ======================================================== */
+  --shadow-xs: 0 1px 2px rgba(22, 48, 31, 0.06);
+  --shadow-sm: 0 1px 2px rgba(22, 48, 31, 0.06), 0 2px 6px rgba(22, 48, 31, 0.06);
+  --shadow-md: 0 2px 4px rgba(22, 48, 31, 0.05), 0 8px 20px rgba(22, 48, 31, 0.09);
+  --shadow-lg: 0 6px 14px rgba(22, 48, 31, 0.08), 0 20px 44px rgba(22, 48, 31, 0.12);
+  --shadow-inset: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+
+  /* ========================================================
+     SPACING — 4px base
+     ======================================================== */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 20px;
+  --sp-6: 24px;
+  --sp-8: 32px;
+  --sp-10: 40px;
+  --sp-12: 48px;
+  --sp-16: 64px;
+  --sp-20: 80px;
+  --sp-24: 96px;
+  --sp-32: 128px;
+
+  /* ========================================================
+     TYPE — families, weights, base
+     ======================================================== */
+  --font-display: 'Spectral', 'Georgia', 'Times New Roman', serif;
+  --font-sans: 'Hanken Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'SFMono-Regular', 'Menlo', 'Consolas', monospace;
+
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+
+  /* Eyebrow / label tracking */
+  --track-label: 0.14em;
+  --track-tight: -0.02em;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.45, 0, 0.2, 1);
+  --dur-fast: 140ms;
+  --dur: 220ms;
+  --dur-slow: 360ms;
+}
+
+/* ============================================================
+   SEMANTIC TYPE STYLES — apply via class or @extend pattern
+   ============================================================ */
+
+.display-1 {
+  font-family: var(--font-display);
+  font-weight: var(--fw-semibold);
+  font-size: clamp(48px, 6vw, 84px);
+  line-height: 1.02;
+  letter-spacing: var(--track-tight);
+  color: var(--fg);
+}
+
+.display-2 {
+  font-family: var(--font-display);
+  font-weight: var(--fw-semibold);
+  font-size: clamp(38px, 4.4vw, 60px);
+  line-height: 1.06;
+  letter-spacing: var(--track-tight);
+  color: var(--fg);
+}
+
+.h1 {
+  font-family: var(--font-display);
+  font-weight: var(--fw-semibold);
+  font-size: clamp(32px, 3.4vw, 44px);
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+  color: var(--fg);
+}
+
+.h2 {
+  font-family: var(--font-display);
+  font-weight: var(--fw-medium);
+  font-size: clamp(26px, 2.6vw, 34px);
+  line-height: 1.18;
+  color: var(--fg);
+}
+
+.h3 {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-bold);
+  font-size: 22px;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: var(--fg);
+}
+
+.h4 {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-semibold);
+  font-size: 18px;
+  line-height: 1.35;
+  color: var(--fg);
+}
+
+.lead {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-regular);
+  font-size: clamp(18px, 1.5vw, 21px);
+  line-height: 1.55;
+  color: var(--fg-2);
+}
+
+.body {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-regular);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--fg-2);
+}
+
+.body-sm {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-regular);
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--fg-2);
+}
+
+.eyebrow {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-bold);
+  font-size: 12.5px;
+  line-height: 1;
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--fern);
+}
+
+.caption {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-medium);
+  font-size: 12.5px;
+  line-height: 1.4;
+  color: var(--fg-3);
+}
+
+.quote {
+  font-family: var(--font-display);
+  font-weight: var(--fw-light);
+  font-style: italic;
+  font-size: clamp(22px, 2.4vw, 30px);
+  line-height: 1.4;
+  color: var(--fg);
+}
